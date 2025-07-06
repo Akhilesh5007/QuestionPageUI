@@ -9,6 +9,7 @@ export const Select=(props)=>{
 
         <div className="col-sm-3">
         <select name={name} onChange={fnUserinput} id="selects">
+            <option value="" >Please Select</option>
             {
                 options.map((ele,i)=>{
                     return <option key={"option"+i}  value={ele} >{ele}</option>

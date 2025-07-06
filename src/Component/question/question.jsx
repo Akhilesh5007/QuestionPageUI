@@ -7,24 +7,46 @@ import {Select} from './reuseable/Select'
 import { useState } from 'react'
 
 export const Question=()=>{
-    const [input,setInput]=useState(inputControls);
+
+    const [input,setInput]=useState(inputControls); //inputcontrol came from configuration.jsx file
     const [isChecked,setIsChecked] = useState(false) ;
     // console.log([...input]);    
     const fnUserinput=(event)=>{
         const {value,name}=event.target;
         const _input=[...input];
         let _inputObj=_input.find((obj)=>name===obj.name); //true //by default arrow function return even if we not write return
-        //yha par inputobj me inputControls ka copy nhi balki uska reference ayega aur jo bhi chnage hoga wo ariginal data me reflect hoga.
+        //yha par inputobj me inputControls ka copy nhi balki uska reference ayega aur jo bhi chnage hoga wo original data me reflect hoga.
+        
         _inputObj.value=value; //inputControls me ek aur value na ka key:value pair add krdega.
         if(_inputObj.required){
-            _inputObj = fnValidate(_inputObj);
+            fnValidate(_inputObj);
             setInput(_input);
         }
     }
 
-    const btnclck=()=>{alert('WellDone !!!')}
+    const btnclck=()=>{
+        // return;
+         const _input=[...input];
+         _input.forEach((obj)=>{
+            // console.log(obj);
+            if (obj.required) {
+                console.log('if calleed ')
+              fnValidate(obj);  
+            }
+         })
+         const isInvalid= _input.some((obj)=>{obj.errorMsg});//agar errormsg mila to form is invalid
+         console.log('isInvalid '+isInvalid);
+         if(!isInvalid){
+             setInput(_input);
+             setIsChecked(false);
+            return;
+         }   
+
+        // alert('WellDone !!!')
+        console.log('clicked')
+    }
     const fnCheckChange=(event)=>{
-        console.log('Hi Change '+event.target.value,event.target.id,event.target.name,event.target.checked);
+        // console.log('Hi Change '+event.target.value,event.target.id,event.target.name,event.target.checked);
         setIsChecked(event.target.checked);
     }
 // --------------------------------------------Rendering Start from here-----------------------------------

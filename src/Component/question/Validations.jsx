@@ -1,7 +1,11 @@
 const validationsregexpression = {
-    Min10Chars :{
-        regexpression:/.{10,}/,
-        errorMsg:"Should Min 10 Character",
+    Required:{
+        regexpression:/./,
+        errorMsg:"Please enter Values",
+    },
+    Min5Chars :{
+        regexpression:/.{5,}/,
+        errorMsg:"Should Min 5 Character",
     },
     Exact10Digit:{
         regexpression:/^[0-9]{10}$/,
@@ -27,10 +31,6 @@ const validationsregexpression = {
         regexpression:/^\s*$/,
         errorMsg:"Space not allowed",
     },
-    Required:{
-        regexpression:/./,
-        errorMsg:"Please enter Values",
-    },
     Password:{
         regexpression:/(?=[A-Za-z0-9@#$%^&+!=]+$)^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&+!= ])/,
         errorMsg:"Min 8 chars[low+Upr+Special+Dgt]",
@@ -39,16 +39,23 @@ const validationsregexpression = {
 };
 
 export const fnValidate=(inputObj)=>{
-    inputObj.errorMsg="";
+    inputObj.errorMsg='';
     const {value,criteria}=inputObj;
     for (let i = 0; i < criteria.length; i++) {
         // const regObj = validationsregexpression[criteria[i]];
-        //  regexpression:/.{5,}/,
         const {regexpression,errorMsg} = validationsregexpression[criteria[i]];
-        if(!regexpression.test(value)){
+        if(!regexpression.test(value ||'')){
+            // console.log(regexpression.test(value));
             inputObj.errorMsg=errorMsg;
             break;
          }       
     }
-    return inputObj;
+    // console.log("inputobj lvl "+ inputObj.lbl);
+    // console.log("inputobj name "+ inputObj.name);
+    // console.log("inputobj type "+ inputObj.type);
+    // console.log("inputobj tag "+ inputObj.tag);
+    // console.log("inputobj req "+ inputObj.required);
+    // console.log("inputobj errormsg "+ inputObj.errorMsg);
+    // console.log("inputobj value "+ inputObj.value);
+    // return inputObj;
 };

@@ -4,9 +4,8 @@
         name:"queArea",
         tag:"textarea",
         required:true,
-        criteria:['Min10Chars','Required'],
+        criteria:['Required','Min5Chars',],
         placeholder:'Write Some Text...',
-        // value:"Null",
     },
     {
         lbl:"Option 1",
@@ -14,8 +13,8 @@
         type:"text",
         tag:"input",
         required:true,
-        criteria:['Required','Email'],
-        placeholder:'Write Email',
+        criteria:['Required','OnlyDigit'],
+        placeholder:'Mobile',
     }, 
     {
         lbl:"Option 2",
@@ -31,8 +30,8 @@
         type:"text",
         tag:"input",
         required:true,
-        criteria:['Required','Password'],
-        placeholder:'Password',
+        criteria:['Required'],
+        placeholder:'Anytext',
     },
     {
         lbl:"Option 4",
@@ -55,7 +54,7 @@
     {
         lbl:"Answer",
         name:"ans",
-        options:['A','B','C','D'],
+        options:['A','B','C','D','AB','AC','AD','BC','BD','CD','ABC','ABD','BCD','ACD','ABCD'],
         tag:"select",
         required:false,
         placeholder:'Your Answers',
