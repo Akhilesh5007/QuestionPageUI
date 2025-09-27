@@ -1,4 +1,4 @@
-const validationsregexpression = {
+export const validationsregexpression = {
     Required:{
         regexpression:/./,
         errorMsg:"Please enter Values",
@@ -37,25 +37,20 @@ const validationsregexpression = {
     }
 
 };
-
 export const fnValidate=(inputObj)=>{
-    inputObj.errorMsg='';
     const {value,criteria}=inputObj;
+    inputObj.errorMsg='';
     for (let i = 0; i < criteria.length; i++) {
-        // const regObj = validationsregexpression[criteria[i]];
         const {regexpression,errorMsg} = validationsregexpression[criteria[i]];
         if(!regexpression.test(value ||'')){
-            // console.log(regexpression.test(value));
             inputObj.errorMsg=errorMsg;
             break;
          }       
     }
-    // console.log("inputobj lvl "+ inputObj.lbl);
-    // console.log("inputobj name "+ inputObj.name);
-    // console.log("inputobj type "+ inputObj.type);
-    // console.log("inputobj tag "+ inputObj.tag);
-    // console.log("inputobj req "+ inputObj.required);
-    // console.log("inputobj errormsg "+ inputObj.errorMsg);
-    // console.log("inputobj value "+ inputObj.value);
+    console.log('input obj->',inputObj)
+    console.log('error msg->',inputObj.errorMsg)
     // return inputObj;
 };
+    // criterio[0]=required=> 
+    // validationsregexpression[criteria[0]]=>{regexpression:/./,errorMsg:"Please enter Values",}
+    // criterio[1]=min5char
