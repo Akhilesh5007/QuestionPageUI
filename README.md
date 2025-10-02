@@ -1,12 +1,49 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Online Quiz
 
-Currently, two official plugins are available:
+This Online Quiz App provide Single and Multiple Type question user can interact with there preferences.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Appendix
 
-## Expanding the ESLint configuration
+Admin can add and delete questions as per there requirments.
+For this seperate page will be open for verified Admin.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Features
+
+- Live previews
+- Cross platform
+- Admin/User interact simultaneously
+- Everything will be online.
+- Advance Securtiy Features.
+
+## Contributing
+
+Contributions are always welcome!
+
+Drop a mail `akhileshkumargupta5007@gmail.com` for ways to get started.
+Please adhere to this project's `code of conduct`.
+
+
+## Authors
+
+- [@Akhilesh5007](https://www.github.com/Akhilesh5007)
+
+
+# Hi, I'm Akhilesh! 👋
+
+
+## 🚀 About Me
+I'm a full stack developer...
+
+
+## Tech Stack
+
+**Client:** React, Redux, HTML, CSS, Bootstrap.
+
+**Server:** Node, Express.
+
+
+## Optimizations
+
+Refactors, performance improvements, accessibility, security.
+
